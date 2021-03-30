@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 import { ViewMoreComponent } from './view-more/view-more.component';
 
@@ -15,7 +17,7 @@ import { ViewMoreComponent } from './view-more/view-more.component';
 export class ConsulteeComponent implements OnInit {
   displayedColumns: string[] = ['name', 'c_type', 'country', 'c_dt', 'timeLeft', 'actions'];
   dataSource = new MatTableDataSource<any>();
-
+  private unsubscribe = new Subject();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   constructor(
@@ -34,8 +36,13 @@ export class ConsulteeComponent implements OnInit {
     this.getConsultee();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
+  }
+
   getConsultee(): void {
-    this._http.get(environment.consultee_url).subscribe((obs: any[]) => {
+    this._http.get(environment.consultee_url).pipe(takeUntil(this.unsubscribe)).subscribe((obs: any[]) => {
       this.dataSource.data = obs;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
