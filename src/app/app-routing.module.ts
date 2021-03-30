@@ -14,7 +14,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: NavbarComponent,
     children: [
-      { path: '', component: ConsulteeComponent },
+      { path: 'consultee', component: ConsulteeComponent },
       { path: 'dashboard', component: DashboardComponent},
       { path: 'escalated', component: EscalateComponent }
     ]

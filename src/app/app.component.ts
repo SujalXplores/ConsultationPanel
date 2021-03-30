@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { SocialAuthService } from 'angularx-social-login';
+import IdleTimer from "./IdleTimer";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontEndTest';
+  title = 'FrontEndTest';
+  timer: any;
+  constructor(private _router: Router, private authService: SocialAuthService) {}
+  ngOnInit() {
+    this.timer = new IdleTimer({
+      timeout: 600,
+      onTimeout: () => {
+        this._router.navigate(['']);
+        this.authService.signOut();
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.timer.clear();
+  }
 }

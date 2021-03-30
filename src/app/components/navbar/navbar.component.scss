@@ -15,3 +15,19 @@
   top: 0;
   z-index: 1;
 }
+
+.mat-list-item.active {
+  background: rgba(63, 81, 181, 0.15);
+  color: #3f51b5;
+  .nav-i {
+    color: #3f51b5;
+  }
+}
+
+mat-icon {
+  margin-right: 10px;
+}
+
+.nav-i, .mat-list-item {
+  color: #777777;
+}
