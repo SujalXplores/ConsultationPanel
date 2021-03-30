@@ -1,0 +1,19 @@
+<h3 mat-dialog-title id="header">
+    {{data.Subscription}} Subscription - Submitted:{{data.Submitted}} - Last Update:{{data.Last_Update}}
+</h3>
+<mat-divider></mat-divider>
+<mat-dialog-content class="mat-typography">
+    <h1 class="text-muted">{{data.Consult_Type}} - {{data.Name}} - {{data.gender}} - {{data.Age}}y.o.</h1>
+    <h4><b>DOB: </b>{{data.DOB}} &nbsp; <b>Email: </b>{{data.Email}}</h4>
+    <h4><b>Skin Type: </b>{{data.Skin_Type}}</h4>
+    <h4><b>Secondary Concerns: </b>{{data.Secondary_Concern}}</h4>
+    <h4><b>Patient Reports: </b>{{data.Patient_Report}}</h4>
+    <h4><b>Previous skin treatments: </b>{{data.Previous}}</h4>
+    <h4><b>Medical Conditions: </b>{{data.Medical_Condition}}</h4>
+    <h4><b>Current Medicines: </b>{{data.Current_Medicines}}</h4>
+    <h4><b>Allergies: </b>{{data.Allergies}}</h4>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-stroked-button color="primary" (click)="onEscalate()" cdkFocusInitial>Escalate</button>
+</mat-dialog-actions>
