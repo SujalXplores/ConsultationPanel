@@ -47,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConsulteeComponent } from './components/consultee/consultee.component';
 import { EscalateComponent } from './components/escalate/escalate.component';
 import { ViewMoreComponent } from './components/consultee/view-more/view-more.component';
+import { LogoutComponent } from './components/navbar/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ViewMoreComponent } from './components/consultee/view-more/view-more.co
     NavbarComponent,
     ConsulteeComponent,
     EscalateComponent,
-    ViewMoreComponent
+    ViewMoreComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

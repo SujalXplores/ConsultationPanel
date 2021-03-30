@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       this.auth.authState.pipe(takeUntil(this.unsubscribe)).subscribe((user) => {
         if (user != null) {
           localStorage.setItem('id', user.authToken);
-          this._router.navigate(['/nav/dashboard']);
+          this._router.navigate(['/nav/consultee']);
           this.toast.show("Welcome Aboard " + user.firstName, {
             theme: 'snackbar',
             id: 'welcome',

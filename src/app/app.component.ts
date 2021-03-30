@@ -16,6 +16,7 @@ export class AppComponent {
     this.timer = new IdleTimer({
       timeout: 600,
       onTimeout: () => {
+        localStorage.clear();
         this._router.navigate(['']);
         this.authService.signOut();
       }
