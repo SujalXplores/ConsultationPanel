@@ -19,8 +19,8 @@ export class EscalateComponent implements OnInit {
   private unsubscribe = new Subject();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  startTime
-  endTime
+  startTime: any;
+  endTime: any;
   isExist: boolean = false;
   obj: any = {}
   constructor(private _http: HttpClient) {
@@ -36,7 +36,7 @@ export class EscalateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._http.get<any[]>('http://localhost:3000/escalate_track/').subscribe(o => {
+    this._http.get<any[]>(environment.escalate_track).pipe(takeUntil(this.unsubscribe)).subscribe(o => {
       o.forEach(element => {
         if(element.date===moment().format("L")) {
           this.isExist = true;
@@ -53,14 +53,14 @@ export class EscalateComponent implements OnInit {
     secondsSpent /= 1000;
     if(this.isExist) {
       this.obj.seconds += secondsSpent;
-      this._http.put('http://localhost:3000/escalate_track/' + this.obj.id, this.obj).subscribe();
+      this._http.put(environment.escalate_track + this.obj.id, this.obj).pipe(takeUntil(this.unsubscribe)).subscribe();
     }
     if(!this.isExist) {
       this.obj = {
         "date": moment().format("L"),
         "seconds": secondsSpent
       }
-      this._http.post('http://localhost:3000/escalate_track/', this.obj).subscribe();
+      this._http.post(environment.escalate_track, this.obj).pipe(takeUntil(this.unsubscribe)).subscribe();
     }
     this.unsubscribe.next();
     this.unsubscribe.complete();

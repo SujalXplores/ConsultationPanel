@@ -3,33 +3,74 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h1 mat-dialog-title>
-                        <mat-icon color="warn">timelapse</mat-icon>
-                    </h1>
-                    <h3 class="card-title">Total Time</h3>
-                    <mat-icon style="font-size: 15px;">access_time</mat-icon>8min
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1 mat-dialog-title>
+                                <mat-icon color="warn" class="icon">timelapse</mat-icon>
+                            </h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3 class="card-title">Total Time</h3>
+                            <mat-icon class="material-icons-outlined" class="clock">access_time</mat-icon>{{ total_time
+                            * 1000 | date:'H':'UTC' }}h {{ total_time * 1000 | date:'mm':'UTC'}}min
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h1 mat-dialog-title>
-                        <mat-icon color="accent">pending_actions</mat-icon>
-                    </h1>
-                    <h3 class="card-title">Escalate Page</h3>
-                    <mat-icon style="font-size: 15px;">access_time</mat-icon>{{et * 1000 | date:'H:mm:ss':'UTC'}}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1 mat-dialog-title>
+                                <mat-icon color="accent" class="icon">pending_actions</mat-icon>
+                            </h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3 class="card-title">Escalate Page</h3>
+                            <mat-icon class="material-icons-outlined" class="clock">access_time</mat-icon>{{
+                            escalate_time * 1000 | date:'H':'UTC' }}h {{ escalate_time * 1000 | date:'mm':'UTC'}}min
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h1 mat-dialog-title>
-                        <mat-icon color="primary">contact_page</mat-icon>
-                    </h1>
-                    <h3 class="card-title">Consultee Page</h3>
-                    <mat-icon style="font-size: 15px;">access_time</mat-icon>8min
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1 mat-dialog-title>
+                                <mat-icon color="primary" class="icon">contact_page</mat-icon>
+                            </h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <h3 class="card-title">Consultee Page</h3>
+                            <mat-icon class="material-icons-outlined" class="clock">access_time</mat-icon>{{
+                            consultee_time * 1000 | date:'H':'UTC' }}h {{ consultee_time * 1000 | date:'mm':'UTC'}}min
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <canvas id="consulteeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <canvas id="escalateChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>

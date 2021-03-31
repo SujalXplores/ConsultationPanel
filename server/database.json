@@ -141,8 +141,54 @@
     }
   ],
   "escalate": [],
-  "consultee_track": [],
+  "consultee_track": [
+    {
+      "date": "03/27/2021",
+      "seconds": 64,
+      "id": 1
+    },
+    {
+      "date": "03/28/2021",
+      "seconds": 50,
+      "id": 1
+    },
+    {
+      "date": "03/29/2021",
+      "seconds": 10,
+      "id": 1
+    },
+    {
+      "date": "03/30/2021",
+      "seconds": 10,
+      "id": 1
+    },
+    {
+      "date": "03/31/2021",
+      "seconds": 62,
+      "id": 1
+    },
+    {
+      "date": "04/01/2021",
+      "seconds": 64,
+      "id": 1
+    }
+  ],
   "escalate_track": [
+    {
+      "date": "03/27/2021",
+      "seconds": 25,
+      "id": 1
+    },
+    {
+      "date": "03/28/2021",
+      "seconds": 100,
+      "id": 1
+    },
+    {
+      "date": "03/29/2021",
+      "seconds": 17,
+      "id": 1
+    },
     {
       "date": "03/30/2021",
       "seconds": 19,
@@ -150,7 +196,7 @@
     },
     {
       "date": "03/31/2021",
-      "seconds": 52,
+      "seconds": 130,
       "id": 2
     }
   ]
