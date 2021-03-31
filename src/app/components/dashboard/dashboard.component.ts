@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   
   constructor() { }
-
-  ngOnInit(): void {}
+  et
+  ngOnInit(): void {
+    this.et = localStorage.getItem('et');
+    this.et /= 1000;
+    console.log(this.et);
+  }
 }

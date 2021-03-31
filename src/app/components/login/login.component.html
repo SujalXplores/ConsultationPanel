@@ -1,15 +1,19 @@
 <body class="text-center">
-    <form class="form-signin rounded">
-        <mat-icon class="mb-4 lock" color="primary">lock</mat-icon>
-        <h1 class="h1 mb-5" style="letter-spacing: 3px; font-size: 25px; font-weight: 500;">Welcome Back</h1>
-        <div class="row">
-            <div class="col-md-12">
-                <button [disabled]="is_disabled" class="btn btn-outline-dark" role="button" style="text-transform:none" (click)="onGoogleSignIn()">
-                    <img loading="eager" width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="../../../assets/Google__G__Logo.svg.webp" />
-                    Login with Google
-                </button>
-            </div>
-        </div>
-        <p class="mt-5 mb-1 text-muted">Built in <img loading="eager" src="../../../assets/ng.svg" height="25px" width="25px" /> by Sujal Shah  &nbsp; &#8212; &nbsp; v11.2.6</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-signin border border-primary rounded"
+        autocomplete="off" spellcheck="false">
+        <h1 class="mat-display-1">Welcome Back!</h1>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input formControlName="u_email_id" type="email" matInput>
+            <mat-icon color="primary" matSuffix class="material-icons-outlined">mail</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Password</mat-label>
+            <input formControlName="u_password" [type]="hide ? 'password' : 'text'" matInput>
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                <mat-icon color="primary" matSuffix class="material-icons-outlined">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="mt-2 w-100" type="submit">Sign In</button>
     </form>
 </body>

@@ -1,6 +1,7 @@
-<mat-form-field appearance="fill" class="search">
+<mat-form-field appearance="outline" class="search">
     <mat-label>Search</mat-label>
-    <input matInput (keyup)="applyFilter($event)" #input>
+    <input matInput (keyup)="applyFilter($event)" #input spellcheck="false" autocomplete="off">
+    <mat-icon color="primary" matSuffix class="material-icons-outlined">search</mat-icon>
 </mat-form-field>
 <div class="mat-elevation-z8 m-2">
     <table mat-table [dataSource]="dataSource" matSort>
@@ -28,7 +29,7 @@
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let row">
                 <button mat-icon-button color="primary" (click)="openDialog(row)">
-                    <mat-icon>pageview</mat-icon>
+                    <mat-icon class="material-icons-outlined">pageview</mat-icon>
                 </button>
             </td>
         </ng-container>

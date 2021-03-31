@@ -41,13 +41,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatBadgeModule } from "@angular/material/badge";
-import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig,  } from 'angularx-social-login';
-import { environment } from 'src/environments/environment.prod';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsulteeComponent } from './components/consultee/consultee.component';
 import { EscalateComponent } from './components/escalate/escalate.component';
 import { ViewMoreComponent } from './components/consultee/view-more/view-more.component';
 import { LogoutComponent } from './components/navbar/logout/logout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -67,6 +66,8 @@ import { LogoutComponent } from './components/navbar/logout/logout.component';
     BrowserAnimationsModule,
     HttpClientModule,
     LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
     MatButtonModule,
     MatInputModule,
@@ -98,23 +99,9 @@ import { LogoutComponent } from './components/navbar/logout/logout.component';
     MatSortModule,
     MatBadgeModule,
     MatPaginatorModule,
-    ClipboardModule,
-    SocialLoginModule,
+    ClipboardModule
   ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(environment.glp)
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

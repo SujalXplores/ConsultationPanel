@@ -1,5 +1,56 @@
 {
+  "admin": [
+    {
+      "id": 1,
+      "email": "sujal@gmail.com",
+      "password": "Sc@4234"
+    }
+  ],
   "consultation": [
+    {
+      "id": 1,
+      "Name": "Joe Bloggs",
+      "Country": "NY,USA",
+      "Time_Left": "4 hour ago",
+      "Consult_Type": "Acne",
+      "Consultation_DateTime": "19/01/2020 10:53",
+      "gender": "Male",
+      "Age": "43",
+      "DOB": "1970-10-17",
+      "Skin_Type": "Dry",
+      "Secondary_Concern": "Wrikles",
+      "Patient_Report": "Post Inflammatory Pigmentation,Ice-Pick scarring",
+      "Medical_Condition": "None",
+      "Current_Medicines": "None",
+      "Allergies": "None",
+      "Previous": "None",
+      "Subscription": "New",
+      "Submitted": "2021-01-15 16:27",
+      "Last_Update": "2021-01-15 16:27",
+      "Email": "Abc@gmail.com"
+    },
+    {
+      "id": 2,
+      "Name": "oe Bloggs",
+      "Country": "NY,USA",
+      "Time_Left": "1 hour ago",
+      "Consult_Type": "Acne",
+      "Consultation_DateTime": "19/01/2020 10:53",
+      "gender": "Male",
+      "Age": "43",
+      "DOB": "1970-10-17",
+      "Skin_Type": "Dry",
+      "Secondary_Concern": "Wrikles",
+      "Patient_Report": "Post Inflammatory Pigmentation,Ice-Pick scarring",
+      "Medical_Condition": "None",
+      "Current_Medicines": "None",
+      "Allergies": "None",
+      "Previous": "None",
+      "Subscription": "New",
+      "Submitted": "2021-01-15 16:27",
+      "Last_Update": "2021-01-15 16:27",
+      "Email": "Abc@gmail.com"
+    },
     {
       "id": 3,
       "Name": "Joe Bloggs",
@@ -89,50 +140,18 @@
       "Email": "Abc@gmail.com"
     }
   ],
-  "escalate": [
+  "escalate": [],
+  "consultee_track": [],
+  "escalate_track": [
     {
-      "id": 1,
-      "Name": "Joe Bloggs",
-      "Country": "NY,USA",
-      "Time_Left": "4 hour ago",
-      "Consult_Type": "Acne",
-      "Consultation_DateTime": "19/01/2020 10:53",
-      "gender": "Male",
-      "Age": "43",
-      "DOB": "1970-10-17",
-      "Skin_Type": "Dry",
-      "Secondary_Concern": "Wrikles",
-      "Patient_Report": "Post Inflammatory Pigmentation,Ice-Pick scarring",
-      "Medical_Condition": "None",
-      "Current_Medicines": "None",
-      "Allergies": "None",
-      "Previous": "None",
-      "Subscription": "New",
-      "Submitted": "2021-01-15 16:27",
-      "Last_Update": "2021-01-15 16:27",
-      "Email": "Abc@gmail.com"
+      "date": "03/30/2021",
+      "seconds": 19,
+      "id": 1
     },
     {
-      "id": 2,
-      "Name": "oe Bloggs",
-      "Country": "NY,USA",
-      "Time_Left": "1 hour ago",
-      "Consult_Type": "Acne",
-      "Consultation_DateTime": "19/01/2020 10:53",
-      "gender": "Male",
-      "Age": "43",
-      "DOB": "1970-10-17",
-      "Skin_Type": "Dry",
-      "Secondary_Concern": "Wrikles",
-      "Patient_Report": "Post Inflammatory Pigmentation,Ice-Pick scarring",
-      "Medical_Condition": "None",
-      "Current_Medicines": "None",
-      "Allergies": "None",
-      "Previous": "None",
-      "Subscription": "New",
-      "Submitted": "2021-01-15 16:27",
-      "Last_Update": "2021-01-15 16:27",
-      "Email": "Abc@gmail.com"
+      "date": "03/31/2021",
+      "seconds": 52,
+      "id": 2
     }
   ]
 }
