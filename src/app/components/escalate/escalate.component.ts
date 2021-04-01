@@ -38,7 +38,7 @@ export class EscalateComponent implements OnInit {
   ngOnInit(): void {
     this._http.get<any[]>(environment.escalate_track).pipe(takeUntil(this.unsubscribe)).subscribe(o => {
       o.forEach(element => {
-        if(element.date===moment().format("L")) {
+        if(element.date == moment().format("L")) {
           this.isExist = true;
           this.obj = element;
         }

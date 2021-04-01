@@ -40,10 +40,8 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    let email = this.loginForm.get('u_email_id').value;
-    let password = this.loginForm.get('u_password').value;
-    console.log(email);
-    console.log(password);
+    const email = this.loginForm.get('u_email_id').value;
+    const password = this.loginForm.get('u_password').value;
     this._http.get('http://localhost:3000/admin?password=' + password + '&email=' + email).pipe(takeUntil(this.unsubscribe)).subscribe((res) => {
       if (res[0] && res[0] != undefined) {
         this._router.navigate(['/nav/consultee']);

@@ -47,6 +47,8 @@ import { EscalateComponent } from './components/escalate/escalate.component';
 import { ViewMoreComponent } from './components/consultee/view-more/view-more.component';
 import { LogoutComponent } from './components/navbar/logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     LayoutModule,
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     MatCheckboxModule,
@@ -99,7 +102,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSortModule,
     MatBadgeModule,
     MatPaginatorModule,
-    ClipboardModule
+    ClipboardModule,
+    HotToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

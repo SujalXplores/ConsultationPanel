@@ -1,78 +1,63 @@
-<div class="m-3">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h1 mat-dialog-title>
-                                <mat-icon color="warn" class="icon">timelapse</mat-icon>
-                            </h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <h3 class="card-title">Total Time</h3>
-                            <mat-icon class="material-icons-outlined" class="clock">access_time</mat-icon>{{ total_time
-                            * 1000 | date:'H':'UTC' }}h {{ total_time * 1000 | date:'mm':'UTC'}}min
-                        </div>
+<div class="grid-container">
+    <h1 class="mat-h1">Your Activity</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-blue order-card">
+                    <div class="card-block mat-elevation-z8">
+                        <mat-card-title class="m-b-20">Total Time</mat-card-title>
+                        <h2>
+                            <mat-icon class="material-icons-outlined icon">timelapse</mat-icon>
+                            <span class="float-end">{{ total_time * 1000 | date:'H:mm:ss':'UTC' }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h1 mat-dialog-title>
-                                <mat-icon color="accent" class="icon">pending_actions</mat-icon>
-                            </h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <h3 class="card-title">Escalate Page</h3>
-                            <mat-icon class="material-icons-outlined" class="clock">access_time</mat-icon>{{
-                            escalate_time * 1000 | date:'H':'UTC' }}h {{ escalate_time * 1000 | date:'mm':'UTC'}}min
-                        </div>
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-green order-card">
+                    <div class="card-block mat-elevation-z8">
+                        <mat-card-title class="m-b-20">Escalate Page</mat-card-title>
+                        <h2>
+                            <mat-icon class="material-icons-outlined icon">pending_actions</mat-icon>
+                            <span class="float-end">{{ escalate_time * 1000 | date:'H:mm:ss':'UTC' }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h1 mat-dialog-title>
-                                <mat-icon color="primary" class="icon">contact_page</mat-icon>
-                            </h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <h3 class="card-title">Consultee Page</h3>
-                            <mat-icon class="material-icons-outlined" class="clock">access_time</mat-icon>{{
-                            consultee_time * 1000 | date:'H':'UTC' }}h {{ consultee_time * 1000 | date:'mm':'UTC'}}min
-                        </div>
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-yellow order-card">
+                    <div class="card-block mat-elevation-z8">
+                        <mat-card-title class="m-b-20">Consultee Page</mat-card-title>
+                        <h2>
+                            <mat-icon class="material-icons-outlined icon">contact_page</mat-icon>
+                            <span class="float-end">{{ consultee_time * 1000 | date:'H:mm:ss':'UTC' }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="text-center">
-                        <canvas id="consulteeChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="text-center">
-                        <canvas id="escalateChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section fxLayout="row wrap" fxLayoutGap fxFlexFill fxLayoutAlign="space-evenly">
+        <mat-card class="dashboard-card mat-elevation-z8" fxFlex="48%" fxFlex.xs="100%">
+            <mat-card-header>
+                <mat-card-title>
+                    Consultee Page
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+                <canvas id="consulteeChart" width="500" height="400"></canvas>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="dashboard-card mat-elevation-z8" fxFlex="48%" fxFlex.xs="100%">
+            <mat-card-header>
+                <mat-card-title>
+                    Escalate Page
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+                <canvas id="escalateChart" width="500" height="400"></canvas>
+            </mat-card-content>
+        </mat-card>
+    </section>
 </div>

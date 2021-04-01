@@ -1,8 +1,71 @@
 .icon {
     font-size: 50px;
-    vertical-align: bottom;
 }
 
 .clock {
     font-size: 15px;
+}
+
+.grid-container {
+    margin: 20px;
+}
+
+.dashboard-card {
+    margin-bottom: 15px;
+}
+
+.dashboard-card-content {
+    text-align: center;
+}
+
+.mat-chip.info-chip {
+    padding: 4px 8px;
+}
+
+.mat-h1 {
+    margin-left: 10px;
+}
+
+.more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg, #4099ff, #73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg, #ffb64d, #ffcb80);
+}
+
+.card {
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+    border-radius: 0px;
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+mat-icon {
+    font-size: 35px;
 }
