@@ -25,6 +25,9 @@ export class ConsulteeComponent implements OnInit {
   endTime: any;
   isExist: boolean = false;
   obj: any = {}
+  dueTime: any[] = [];
+  currTime: any[] = [];
+  timeLeft: any[] = [];
   constructor(
     private _http: HttpClient,
     private _dialog: MatDialog
@@ -41,8 +44,8 @@ export class ConsulteeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._http.get<any[]>(environment.consultee_track).pipe(takeUntil(this.unsubscribe)).subscribe(o => {
-      o.forEach(element => {
+    this._http.get<any[]>(environment.consultee_track).pipe(takeUntil(this.unsubscribe)).subscribe(obs => {
+      obs.forEach(element => {
         if(element.date == moment().format("L")) {
           this.isExist = true;
           this.obj = element;
@@ -74,6 +77,16 @@ export class ConsulteeComponent implements OnInit {
   getConsultee(): void {
     this._http.get(environment.consultee_url).pipe(takeUntil(this.unsubscribe)).subscribe((obs: any[]) => {
       this.dataSource.data = obs;
+      obs.forEach(element=>{
+        this.currTime.push(moment().format("H"));
+        this.dueTime.push(moment(element.Consultation_DateTime).add(8, 'hour').format("H"));
+      });
+      for (let i = 0; i < this.currTime.length; i++) {
+        Number.parseInt(this.currTime[i]);
+        Number.parseInt(this.dueTime[i]);        
+        this.timeLeft.push(this.currTime[i] - this.dueTime[i]);
+        this.dataSource.data[i].Time_Left = this.timeLeft[i];
+      }
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
