@@ -23,13 +23,19 @@
         </ng-container>
         <ng-container matColumnDef="timeLeft">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Time Left </th>
-            <td mat-cell *matCellDef="let row" [ngClass]="{'green': row.Time_Left != '1 hour ago', 'red': row.Time_Left == '1 hour ago'}"> {{row.Time_Left}} </td>
+            <td mat-cell *matCellDef="let row">
+                <mat-chip-list>
+                    <mat-chip color="{{ row.Time_Left == '1 hour ago' ? 'warn' : 'primary'}}" selected>
+                        {{row.Time_Left}}
+                    </mat-chip>
+                </mat-chip-list>
+            </td>
         </ng-container>
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let row">
-                <button mat-icon-button color="primary" (click)="openDialog(row)">
-                    <mat-icon class="material-icons-outlined">pageview</mat-icon>
+                <button mat-icon-button color="primary" (click)="openDialog(row)" matTooltip="Escalate">
+                    <mat-icon class="material-icons-outlined">launch</mat-icon>
                 </button>
             </td>
         </ng-container>
