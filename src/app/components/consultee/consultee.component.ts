@@ -77,16 +77,15 @@ export class ConsulteeComponent implements OnInit {
   getConsultee(): void {
     this._http.get(environment.consultee_url).pipe(takeUntil(this.unsubscribe)).subscribe((obs: any[]) => {
       this.dataSource.data = obs;
-      obs.forEach(element=>{
+      obs.forEach((element,i)=>{
         this.currTime.push(moment().format("H"));
         this.dueTime.push(moment(element.Consultation_DateTime).add(8, 'hour').format("H"));
-      });
-      for (let i = 0; i < this.currTime.length; i++) {
         Number.parseInt(this.currTime[i]);
         Number.parseInt(this.dueTime[i]);        
         this.timeLeft.push(this.currTime[i] - this.dueTime[i]);
-        this.dataSource.data[i].Time_Left = this.timeLeft[i];
-      }
+        let today = moment().format("YYYY-MM-DD HH:mm");
+        this.dataSource.data[i].Time_Left = ((moment(today).diff(element.Consultation_DateTime) / 1000) > 86400) ? "Long time ago" : this.timeLeft[i];
+      });
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });

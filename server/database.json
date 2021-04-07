@@ -13,7 +13,7 @@
       "Country": "NY,USA",
       "Time_Left": 0,
       "Consult_Type": "Acne",
-      "Consultation_DateTime": "2021-04-01 09:30",
+      "Consultation_DateTime": "2021-04-07 01:30",
       "gender": "Male",
       "Age": "43",
       "DOB": "1970-10-17",
@@ -166,6 +166,11 @@
       "date": "04/01/2021",
       "seconds": 116,
       "id": 5
+    },
+    {
+      "date": "04/07/2021",
+      "seconds": 63,
+      "id": 6
     }
   ],
   "escalate_track": [
@@ -198,6 +203,11 @@
       "date": "04/01/2021",
       "seconds": 83,
       "id": 6
+    },
+    {
+      "date": "04/07/2021",
+      "seconds": 26,
+      "id": 7
     }
   ]
 }
