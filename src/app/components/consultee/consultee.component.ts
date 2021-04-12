@@ -84,7 +84,7 @@ export class ConsulteeComponent implements OnInit {
         Number.parseInt(this.dueTime[i]);        
         this.timeLeft.push(this.currTime[i] - this.dueTime[i]);
         let today = moment().format("YYYY-MM-DD HH:mm");
-        this.dataSource.data[i].Time_Left = ((moment(today).diff(element.Consultation_DateTime) / 1000) > 86400) ? "Long time ago" : this.timeLeft[i];
+        this.dataSource.data[i].Time_Left = ((moment(today).diff(element.Consultation_DateTime) / 1000) > 86400) ? "Long time ago" : Math.abs(this.timeLeft[i]);
       });
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

@@ -1,7 +1,8 @@
 <body class="text-center">
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-signin border border-primary rounded"
-        autocomplete="off" spellcheck="false">
-        <h1 class="mat-display-1">Welcome Back!</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-signin border border-3 border-primary rounded" autocomplete="off" spellcheck="false">
+    <h1>Welcome Back!</h1>
+    <small class="text-muted">Sign in with your account to continue</small>
+    <div class="mt-4">
         <mat-form-field appearance="outline" class="w-100">
             <mat-label>Email</mat-label>
             <input formControlName="u_email_id" type="email" matInput>
@@ -14,6 +15,7 @@
                 <mat-icon color="primary" matSuffix class="material-icons-outlined">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
         </mat-form-field>
-        <button mat-raised-button color="primary" class="mt-2 w-100" type="submit">Sign In</button>
+        <button mat-raised-button color="primary" class="mt-2 w-100" id="btn0" type="submit">Sign In</button>
+    </div>
     </form>
 </body>

@@ -24,8 +24,8 @@ export class DashboardComponent implements OnInit {
   escalate_seconds = [];
 
   constructor(private _http: HttpClient) {
-    this._http.get<any[]>(environment.escalate_track).pipe(takeUntil(this.unsubscribe)).subscribe(o => {
-      o.forEach(element => {
+    this._http.get<any[]>(environment.escalate_track).pipe(takeUntil(this.unsubscribe)).subscribe(res => {
+      res.forEach(element => {
         this.escalate_labels.push(element.date);
         this.escalate_seconds.push(element.seconds);
         if (element.date === moment().format("L")) {
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
       });
       this.escalate_labels.splice(0, this.escalate_labels.length - 5);
       this.escalate_seconds.splice(0, this.escalate_seconds.length - 5);
-      this.consulteeChart = new Chart('escalateChart', {
+      this.escalateChart = new Chart('escalateChart', {
         type: 'line',
         data: {
           labels: this.escalate_labels,
@@ -67,8 +67,8 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
-    this._http.get<any[]>(environment.consultee_track).pipe(takeUntil(this.unsubscribe)).subscribe(o => {
-      o.forEach(element => {
+    this._http.get<any[]>(environment.consultee_track).pipe(takeUntil(this.unsubscribe)).subscribe(res => {
+      res.forEach(element => {
         this.consultee_labels.push(element.date);
         this.consultee_seconds.push(element.seconds);
         if (element.date === moment().format("L")) {
@@ -78,7 +78,7 @@ export class DashboardComponent implements OnInit {
       });
       this.consultee_labels.splice(0, this.consultee_labels.length - 5);
       this.consultee_seconds.splice(0, this.consultee_seconds.length - 5);
-      this.escalateChart = new Chart('consulteeChart', {
+      this.consulteeChart = new Chart('consulteeChart', {
         type: 'line',
         data: {
           labels: this.consultee_labels,
